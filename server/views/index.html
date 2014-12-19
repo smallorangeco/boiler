@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html ng-app="app">
     <head>
-        <title>Admin</title>
+        <title>Boiler App</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
         <meta name="description" content="">
         <meta name="author" content="Felipe Rohde | Orange #1">
+        <base data-static-url="/">
 
         <!-- Libs CSS -->
         {{css 'libs/bootstrap/dist/css/bootstrap.min.css'}}
+        {{css 'libs/nprogress/nprogress.css'}}
 
         <!-- App CSS -->
         {{css 'app/css/style.css'}}
@@ -22,7 +24,12 @@
         {{js 'libs/angular/angular.min.js'}}
         {{js 'libs/angular-route/angular-route.min.js'}}
         {{js 'libs/bootstrap/dist/js/bootstrap.min.js'}}
-
+        {{js 'libs/nprogress/nprogress.js'}}
+        
+        <!-- Services -->
+        {{js 'app/services/api.js'}}
+        {{js 'app/services/auth.js'}}
+        
         <!-- App JS -->
         {{js 'app/app.js'}}
     </body>
