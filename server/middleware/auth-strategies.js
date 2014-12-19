@@ -4,7 +4,7 @@ var localStrategy = require('passport-local').Strategy;
 var BearerStrategy = require('passport-http-bearer').Strategy;
 var crypto = require('crypto');
 var algorithm = 'aes-256-ctr';
-var password = '876b78o4b4687m32432m4iljdwkldjaldjlhff';
+var password = '98r327b83z2zem$lewjfhwdwqhwlqh$dwecwswqsqd';
 
 // ## Strategy used to login user/password, where consumers get the access token
 passport.use('login', new localStrategy({

@@ -20,7 +20,7 @@ self.authenticateUser = function (req, res, next) {
         
         res.json({
             user: result,
-            token: token
+            //another: another
         });
     })(req, res, next);
 };

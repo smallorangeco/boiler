@@ -1,0 +1,15 @@
+{
+  "name": "boiler",
+  "version": "0.0.1",
+  "authors": [
+    "rohde <feliperohdee@gmail.com>"
+  ],
+  "description": "Boilerplate to Node.js / Angular App's",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.3.7",
+    "angular-route": "~1.3.7",
+    "bootstrap": "~3.3.1"
+  }
+}
