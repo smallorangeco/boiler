@@ -32,7 +32,7 @@ app.use('/error', middleware.errors.customError);
 
 //Routes
 app.use(subdomain('api', routes.api));
-app.use('/', routes.abother);
+app.use('/', routes.another);
 
 // error handlers
 //Final Error Handlers
