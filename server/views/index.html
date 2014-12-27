@@ -8,29 +8,33 @@
         <meta name="author" content="Felipe Rohde | Orange #1">
         <base data-static-url="/">
 
-        <!-- Libs CSS -->
+        <!-- Libs -->
         {{css 'libs/bootstrap/dist/css/bootstrap.min.css'}}
         {{css 'libs/nprogress/nprogress.css'}}
 
-        <!-- App CSS -->
+        <!-- App -->
         {{css 'app/css/style.css'}}
     </head>
     <body>
         <h1>Yeah, it works!</h1>
         <div ng-view></div>
 
-        <!-- Libs JS -->
+        <!-- Libs -->
         {{js 'libs/jquery/dist/jquery.min.js'}}
         {{js 'libs/angular/angular.min.js'}}
         {{js 'libs/angular-route/angular-route.min.js'}}
         {{js 'libs/bootstrap/dist/js/bootstrap.min.js'}}
         {{js 'libs/nprogress/nprogress.js'}}
         
+        <!-- App -->
+        {{js 'app/app.js'}}
+        {{js 'app/app.config.js'}}
+        {{js 'app/app.routes.js'}}
+        {{js 'app/app.run.js'}}
+        {{js 'app/app.core.js'}}
+        
         <!-- Services -->
         {{js 'app/services/api.js'}}
         {{js 'app/services/auth.js'}}
-        
-        <!-- App JS -->
-        {{js 'app/app.js'}}
     </body>
 </html>

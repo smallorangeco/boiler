@@ -1,17 +1,21 @@
 // # Api Index
 var _ = require('lodash');
 
-var self = this;
-self.apiControl = require('./apiControl');
+module.exports = {
+    http: http,
+    apiController: require('./apiController'),
+};
+
+/* ======================================================================== */
 
 /*
- * # Public HTTP
+ * # HTTP
  *
  * Wrapper for API functions which are called via an HTTP request. Takes the API method and wraps it so that it gets
  * data from the request and returns a sensible JSON response.
  */
 
-self.http = function (apiMethod) {
+function http(apiMethod) {
     return function (req, res) {
         var response = {};
 
@@ -42,6 +46,4 @@ self.http = function (apiMethod) {
             res.status(response.status).json(response.data || {});
         });
     };
-};
-
-module.exports = self;
+}

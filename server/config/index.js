@@ -1,5 +1,11 @@
 // # Index Config
-var self = this;
+module.exports = {
+    get: get,
+    isDev: isDev
+};
+
+/* ======================================================================== */
+
 var config = {
     development: {
         /*
@@ -13,14 +19,13 @@ var config = {
     }
 };
 
-// # Public Get
-self.get = function (key) {
+// # Get
+function get(key) {
     return config[process.env.NODE_ENV][key];
-};
+}
 
-// # Public is dev
-self.isDev = function () {
+// # Is Dev
+function isDev() {
     return process.env.NODE_ENV === 'development';
-};
+}
 
-module.exports = self;

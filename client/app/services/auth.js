@@ -1,41 +1,61 @@
 /*---------------------------------------------
  * Auth Factory
  *-------------------------------------------*/
-app.factory('authService', ['$window', '$location', function ($window, $location) {
-        var self = this;
-        var isLogged = !!($window.sessionStorage._smallOrangeAuth);
+(function () {
+    'use strict';
 
-        //Public isLogged
-        self.isLogged = function () {
-            return isLogged;
+    angular.module('app.core').factory('authService', [
+        '$window',
+        '$location',
+        authFactory
+    ]);
+
+    function authFactory($window, $location) {
+        return{
+            isLogged: isLogged,
+            getAuth: getAuth,
+            grant: grant,
+            revoke: revoke
         };
 
-        //Public Get Auth
-        self.getAuth = function () {
+        /*====================================*/
+
+        var _isLogged = !!($window.sessionStorage._smallOrangeAuth);
+
+        // # isLogged
+        function isLogged() {
+            return _isLogged;
+        }
+        ;
+
+        // # Get Auth
+        function getAuth() {
             return $window.sessionStorage._smallOrangeAuth || false;
-        };
+        }
+        ;
 
-        //Public Grant
-        self.grant = function (data) {
-            isLogged = true;
+        // # Grant
+        function grant(data) {
+            _isLogged = true;
 
             $window.sessionStorage._smallOrangeAuth = data.token;
             $window.sessionStorage._smallOrangeUser = JSON.stringify(data.user);
 
             //Redirect to Admin Dashboard
             $location.path('/');
-        };
+        }
+        ;
 
-        //Public Revoke
-        self.revoke = function () {
-            isLogged = false;
+        // # Revoke
+        function revoke() {
+            _isLogged = false;
 
             $window.sessionStorage.removeItem('_smallOrangeAuth');
             $window.sessionStorage.removeItem('_smallOrangeUser');
 
             //Redirect to Login
             $location.path('/login');
-        };
-
-        return self;
-    }]);
+        }
+        ;
+    }
+})();

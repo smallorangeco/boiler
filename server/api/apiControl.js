@@ -1,10 +1,14 @@
 // # API/Upload
 var Promise = require('bluebird');
 
-var self = this;
+module.exports = {
+    method: method
+};
 
-// ## Public Method
-self.method = function (object) {
+/* ======================================================================== */
+
+// ## Method
+function method(object) {
     
     //return Promise.try();
     return Promise.resolve(/* Some validation */).then(function (result) {
@@ -27,5 +31,3 @@ self.method = function (object) {
         /* Some finally task */
     });
 };
-
-module.exports = self;
